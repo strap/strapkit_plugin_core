@@ -1,0 +1,8 @@
+{
+    'package_id': 'com.straphq.strapkit.core',
+    'version': '0.1.0',
+    'platforms': {
+        'android-wear'
+        // Soon to be 'pebble' as well
+    }
+}
