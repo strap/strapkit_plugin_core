@@ -1,8 +1,12 @@
 {
     'package_id': 'com.straphq.strapkit.core',
     'version': '0.1.0',
-    'platforms': {
-        'android-wear'
-        // Soon to be 'pebble' as well
-    }
+    'android-wear': [
+        {
+            'serviceName': 'Page',
+            'packageInfo': 'com.straphq.strapkit.core.ui.Page',
+            'src': 'ui/Page.java',
+            'dest': 'src/main/java/com/straphq/strapkit/core/ui/Page.java' //Should probably auto send these things from PackageInfo
+        }
+    ]
 }
