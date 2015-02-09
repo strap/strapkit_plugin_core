@@ -1,12 +1,24 @@
 {
     'package_id': 'com.straphq.strapkit.core',
     'version': '0.1.0',
+    'require_path': './core.js',
+    'module_name': 'Core',
     'android-wear': [
         {
             'serviceName': 'Page',
-            'packageInfo': 'com.straphq.strapkit.core.ui.Page',
-            'src': 'ui/Page.java',
-            'dest': 'src/main/java/com/straphq/strapkit/core/ui/Page.java' //Should probably auto send these things from PackageInfo
+            'packageInfo': 'com.straphq.strapkit.core.ui.page.Page',
+            'src': 'ui/page/',
+            'dest': 'src/main/java/com/straphq/strapkit/core/ui/page/',
+            'manifest': {
+                'application': '<activity android:name="com.straphq.strapkit.core.ui.page.activity.StrapKitBaseActivity"/>'
+            }
+        }
+    ],
+    'pebble': [
+        {
+            'serviceName': 'Page',
+            'src': 'page.js',
+            'dest': 'libs/plugins/page.js'
         }
     ]
 }

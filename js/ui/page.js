@@ -1,5 +1,5 @@
 
-var exec = require('../exec');
+var exec = require('../exec'); //
 var klass = require('../utils/klass');
 
 var index = 1;
@@ -9,7 +9,7 @@ var getPageIndex = function() {
 };
 
 var Page = klass({
-	id: -1,
+	id: null,
 	views: [],
 	pageOpen: false,
 	backgroundColor: null,
@@ -42,7 +42,7 @@ var Page = klass({
 	},
 	show: function(success, error) {
 		this.pageOpen = true;
-		this.setId(getPageIndex);
+		this.setId(getPageIndex());
 		var viewString = [];
 		for (var i = 0; i < this.getViews().length; i++) {
 			var view = this.getViews()[i];
@@ -56,7 +56,7 @@ var Page = klass({
 		};	
 		exec(success, error, "Page", "show", args);
 	},
-	hide: function() {
+	hide: function(success, error) {
 		this.pageOpen = false;
 		var args = {
 			id: this.getId()
